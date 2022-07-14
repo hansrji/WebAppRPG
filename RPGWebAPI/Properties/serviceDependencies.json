@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "secrets1": {
+      "type": "secrets"
+    },
+    "mongodb1": {
+      "type": "mongodb",
+      "connectionId": "hostname"
+    },
+    "mssql1": {
+      "type": "mssql",
+      "connectionId": "ConnectionStrings:RPGWebAPIContextConnection"
+    }
+  }
+}

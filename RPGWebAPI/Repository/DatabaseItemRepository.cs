@@ -1,19 +1,19 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Driver;
-using WebApp.Models;
+using RPGWebAPI.Models;
 
-namespace WebApp.Services
+namespace RPGWebAPI.Repository
 {
-	public class DatabaseStoreService : IItemService
+	public class DatabaseItemRepository : IItemRepository
 	{
-		protected const string DatabaseName = "store";
+		protected const string DatabaseName = "rpg";
 		protected const string CollectionName = "items";
 
 		protected readonly IMongoCollection<Item> items;
 
 		protected readonly FilterDefinitionBuilder<Item> filterBuilder = Builders<Item>.Filter;
 
-		public DatabaseStoreService(IMongoClient client)
+		public DatabaseItemRepository(IMongoClient client)
 		{
 			IMongoDatabase database = client.GetDatabase(DatabaseName);
 			items = database.GetCollection<Item>(CollectionName);

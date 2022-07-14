@@ -1,14 +1,14 @@
-﻿using WebApp.Models;
+﻿using RPGWebAPI.Models;
 
-namespace WebApp.Services
+namespace RPGWebAPI.Repository
 {
-	public class LocalMemoryStoreService : IItemService
+	public class MemoryItemRepository : IItemRepository
 	{
 		protected IEnumerable<Item> Items { get; }
 		protected Lazy<Item> InvalidItem { get; }
 			= new Lazy<Item>(() => ItemFactory.Create("Invalid", 0));
 
-		public LocalMemoryStoreService()
+		public MemoryItemRepository()
 		{
 			Items = new List<Item>()
 			{
@@ -28,7 +28,7 @@ namespace WebApp.Services
 
 		public void UpdateItem(Item item)
 		{
-			
+
 		}
 
 		public void DeleteItem(Guid id)

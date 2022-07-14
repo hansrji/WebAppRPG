@@ -1,8 +1,8 @@
-﻿using WebApp.Models;
+﻿using RPGWebAPI.Models;
 
-namespace WebApp.Services
+namespace RPGWebAPI.Repository
 {
-	public interface IItemService
+	public interface IItemRepository
 	{
 		Task<IEnumerable<Item>> GetItemsAsync();
 		Task<Item?> GetItemAsync(Guid id);
